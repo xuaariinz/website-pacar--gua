@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery Aurelie Patricia Angeline Putri Radja </title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      background-image: url(https://i.pinimg.com/736x/50/61/73/506173eadfcd6a957fb910042071b5f6.jpg); 
+      color: #f4f3f1; 
+    }
+
+    h1, p {
+      text-align: center;
+      color: #fdfdfb; 
+    }
+
+    .column {
+      float: left;
+      width: 25%;
+      padding: 20px;
+      height: 480px; 
+      transition: transform 0.3s; 
+    }
+
+    .column:hover {
+      transform: matrix(1.02); 
+    }
+
+    .column img {
+      width: 100%;
+      height: 100%; 
+      border-radius: 15px;
+      opacity: 1.8;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .column img:hover {
+      opacity: 0.8;
+      transform: matrix(1.05);
+      filter: brightness(1.2); 
+    }
+
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .container {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(250, 248, 248, 0.9);
+      text-align: center;
+      z-index: 1000;
+      animation: fadeIn 0.5s; 
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .container img {
+      margin-top: 50px;
+      max-width: 80%;
+      max-height: 80%;
+      border-radius: 15px;
+      transition: transform 0.3s; 
+    }
+
+    .container img:hover {
+      transform: scale(1.1); 
+    }
+
+    #imgtext {
+      color: rgb(255, 0, 0);
+      font-size: 20px;
+      margin-top: 10px;
+    }
+
+    .closebtn {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: white;
+      font-size: 35px;
+      cursor: pointer;
+    }
+
+    .strip {
+      display: none;
+      width: 100%;
+      height: 5px;
+      background-color: white;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transition: opacity 0.3s;
+    }
+
+    .column img:active + .strip {
+      display: block;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <h1>Gallery Aurelie Patricia Angelline Putri</h1>
+  <p><a href="cya.html" style="color: #f4f3f1;">Go to Home</a></p>
+  <div class="row">
+    <div class="column">
+      <img src="https://i.pinimg.com/474x/99/1b/74/991b74bb38f2f5388fa63db66650f0ed.jpg" alt="ORANG" onclick="expandImage(this);">
+      <div class="strip"></div>
+    </div>
+    <div class="column">
+      <img src="https://i.pinimg.com/474x/ea/f9/71/eaf971bf622f081abe7ee946e3c01aa0.jpg" alt="PALING" onclick="expandImage(this);">
+      <div class="strip"></div>
+    </div>
+    <div class="column">
+      <img src="https://i.pinimg.com/474x/ae/a8/4d/aea84d49384549b565625f39eb7efa80.jpg" alt="NGESELIN" onclick="expandImage(this);">
+      <div class="strip"></div>
+    </div>
+    <div class="column">
+      <img src="https://i.pinimg.com/474x/41/b5/18/41b5182eb8201abfd55985b1f34a3e9c.jpg" alt="SEDUNIA" onclick="expandImage(this);">
+      <div class="strip"></div>
+    </div>
+  </div>
+
+  <div class="container" id="expandedContainer">
+    <span class="closebtn" onclick="closeImage()">&times;</span>
+    <img id="expandedImg" src="" alt="">
+    <div id="imgtext"></div>
+  </div>
+  <div class="footer"></div>
+        <p style="text-align: center;">
+         © 2024 my girlfriend is the most beautiful
+        </p>
+       </div>
+
+  <script>
+    function expandImage(imgElement) {
+      var expandedContainer = document.getElementById("expandedContainer");
+      var expandedImg = document.getElementById("expandedImg");
+      var imgText = document.getElementById("imgtext");
+
+      expandedImg.src = imgElement.src;
+      imgText.innerHTML = imgElement.alt;
+      expandedContainer.style.display = "block";
+    }
+
+    function closeImage() {
+      var expandedContainer = document.getElementById("expandedContainer");
+      expandedContainer.style.display = "none";
+    }
+  </script>
+</body>
+</html>
